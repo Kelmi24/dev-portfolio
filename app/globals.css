@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  @apply bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100;
+  @apply text-neutral-900 dark:text-neutral-100;
   font-feature-settings: "rlig" 1, "calt" 1;
 }
 
@@ -73,3 +73,70 @@ body {
   }
 }
 
+
+/* Animated Gradient Background */
+@keyframes gradient-orbital {
+  0% {
+    background: 
+      radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.1) 0%, transparent 50%),
+      linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
+  }
+  50% {
+    background: 
+      radial-gradient(circle at 80% 20%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 20% 80%, rgba(255, 119, 198, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 60% 60%, rgba(120, 219, 255, 0.1) 0%, transparent 50%),
+      linear-gradient(135deg, #f0f9ff 0%, #faf5ff 50%, #f8fafc 100%);
+  }
+  100% {
+    background: 
+      radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.1) 0%, transparent 50%),
+      linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
+  }
+}
+
+/* Dark mode version */
+@keyframes gradient-orbital-dark {
+  0% {
+    background: 
+      radial-gradient(circle at 20% 80%, rgba(76, 29, 149, 0.2) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(190, 18, 60, 0.2) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(29, 78, 216, 0.2) 0%, transparent 50%),
+      linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+  }
+  50% {
+    background: 
+      radial-gradient(circle at 80% 20%, rgba(76, 29, 149, 0.2) 0%, transparent 50%),
+      radial-gradient(circle at 20% 80%, rgba(190, 18, 60, 0.2) 0%, transparent 50%),
+      radial-gradient(circle at 60% 60%, rgba(29, 78, 216, 0.2) 0%, transparent 50%),
+      linear-gradient(135deg, #1e1b4b 0%, #431407 50%, #0f172a 100%);
+  }
+  100% {
+    background: 
+      radial-gradient(circle at 20% 80%, rgba(76, 29, 149, 0.2) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(190, 18, 60, 0.2) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(29, 78, 216, 0.2) 0%, transparent 50%),
+      linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+  }
+}
+
+.animate-gradient-bg {
+  animation: gradient-orbital 20s ease-in-out infinite;
+  background-size: 200% 200%;
+  will-change: background;
+}
+
+.dark .animate-gradient-bg {
+  animation: gradient-orbital-dark 20s ease-in-out infinite;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .animate-gradient-bg {
+    animation: none;
+  }
+}

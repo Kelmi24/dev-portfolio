@@ -17,6 +17,7 @@ const ContactForm = dynamic(() => import('@/components/contact/ContactForm'), {
 });
 
 export default function Home() {
+  console.log("Deployment Check: v3 - Reordered Sections & Animated BG");
   return (
     <div className="container mx-auto px-4 py-16">
       <section id="hero" className="min-h-[80vh] flex items-center justify-center">
@@ -30,11 +31,12 @@ export default function Home() {
           <motion.div className="mb-8" variants={slideUp}>
             <div className="relative w-40 h-40 md:w-48 md:h-48 mx-auto">
               <Image
-                src="/images/profile.png"
+                src="/images/profile-original.png"
                 alt="Kelmi - Full Stack Developer Professional Headshot"
                 fill
                 priority
-                className="rounded-full object-cover border-4 border-white/20 dark:border-neutral-800/40 shadow-2xl ring-4 ring-primary-500/20 dark:ring-primary-400/20"
+                sizes="(max-width: 768px) 160px, 192px"
+                className="rounded-full object-cover border-4 border-white/20 dark:border-neutral-800/40 shadow-2xl ring-4 ring-primary-500/20 dark:ring-primary-400/20 p-1 bg-white dark:bg-neutral-900"
               />
               {/* Decorative gradient ring */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary-500/20 to-transparent -z-10 blur-xl"></div>
@@ -196,12 +198,11 @@ export default function Home() {
         </motion.div>
       </motion.section>
 
-      {/* Skills Section */}
-      <SkillsSection />
+
 
       <motion.section
         id="projects"
-        className="py-20 bg-neutral-50 dark:bg-neutral-900 -mx-4 px-4 transition-colors"
+        className="py-20 -mx-4 px-4 transition-colors"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
@@ -237,6 +238,9 @@ export default function Home() {
           </motion.div>
         </div>
       </motion.section>
+
+      {/* Skills Section */}
+      <SkillsSection />
 
       <section id="contact" className="py-20">
         <h2 className="text-4xl font-bold mb-8 text-center text-neutral-900 dark:text-neutral-50">Get in Touch</h2>
