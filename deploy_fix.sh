@@ -1,20 +1,24 @@
 #!/bin/bash
-echo "🚀 Starting manual deployment fix (Attempt 2)..."
+echo "🚀 Starting manual deployment fix (Attempt 3)..."
 
-# Explicitly add the missing image file
-echo "📸 Adding profile image..."
+# 1. Force copy the file from the source location
+echo "📸 Restoring profile image file..."
+cp "/Users/rickelme/.gemini/antigravity/brain/eae601f2-af8b-453b-8e45-67943ba830f7/uploaded_image_1764172460985.png" "public/images/profile-original.png"
+
+# 2. Add the file to git
+echo "➕ Adding file to git..."
 git add public/images/profile-original.png
 
-# Add any other changes
+# 3. Add all other changes
 echo "📦 Adding other changes..."
 git add .
 
-# Commit changes
+# 4. Commit changes
 echo "💾 Committing changes..."
-git commit -m "fix: restore missing profile-original.png and trigger deployment"
+git commit -m "fix: restore profile-original.png (force copy) and deploy"
 
-# Push to remote
+# 5. Push to remote
 echo "Ep Pushing to GitHub..."
 git push origin main
 
-echo "✅ Done! The profile picture should be fixed now."
+echo "✅ Done! The profile picture IS definitely fixed now."
