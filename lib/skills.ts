@@ -1,4 +1,40 @@
 // Skills data structure and configuration
+import { IconType } from 'react-icons';
+import {
+  FaReact,
+  FaNodeJs,
+  FaPython,
+  FaGitAlt,
+  FaGithub,
+  FaDocker,
+  FaHtml5,
+  FaCss3Alt,
+} from 'react-icons/fa';
+import {
+  SiTypescript,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiJavascript,
+  SiExpress,
+  SiMongodb,
+  SiPostgresql,
+  SiAmazon,
+  SiRedux,
+  SiVuedotjs,
+  SiGraphql,
+  SiRedis,
+  SiMysql,
+  SiVercel,
+  SiNpm,
+  SiPostman,
+  SiFigma,
+  SiJest,
+  SiRust,
+  SiKubernetes,
+  SiThreedotjs,
+} from 'react-icons/si';
+import { TbApi } from 'react-icons/tb';
+import { VscGithubAction, VscCode } from 'react-icons/vsc';
 
 export type SkillCategory = 'frontend' | 'backend' | 'database' | 'devops' | 'tools';
 
@@ -15,7 +51,8 @@ export interface Skill {
   lastUsed: string; // Date string (YYYY-MM)
   projects: string[]; // Associated project names
   description: string; // How you've used it
-  icon: string; // Emoji or icon identifier
+  icon: IconType; // React icon component
+  color: string; // Brand color or theme-adaptive
   group: SkillGroup; // Core, Familiar, or Learning
 }
 
@@ -73,7 +110,8 @@ export const skills: Skill[] = [
     projects: ['Portfolio Website', 'E-commerce Platform', 'Dashboard App'],
     description:
       'Built multiple production applications using React with hooks, context API, and modern patterns. Expert in component architecture and state management.',
-    icon: '⚛️',
+    icon: FaReact,
+    color: '#61DAFB',
     group: 'core',
   },
   {
@@ -86,7 +124,8 @@ export const skills: Skill[] = [
     projects: ['Portfolio Website', 'Type-safe API Client', 'Component Library'],
     description:
       'Strong typing skills with interfaces, generics, and advanced types. Use TypeScript for all new projects to ensure type safety and better developer experience.',
-    icon: '📘',
+    icon: SiTypescript,
+    color: '#3178C6',
     group: 'core',
   },
   {
@@ -99,7 +138,8 @@ export const skills: Skill[] = [
     projects: ['Portfolio Website', 'Blog Platform', 'SaaS Application'],
     description:
       'Experienced with App Router, Server Components, API routes, and SSR/SSG. Built SEO-optimized applications with excellent performance.',
-    icon: '▲',
+    icon: SiNextdotjs,
+    color: 'currentColor',
     group: 'core',
   },
   {
@@ -112,7 +152,8 @@ export const skills: Skill[] = [
     projects: ['Portfolio Website', 'UI Component Library', 'Marketing Site'],
     description:
       'Expert in utility-first CSS with custom configurations, responsive design, and creating reusable component patterns. Proficient in dark mode implementation.',
-    icon: '🎨',
+    icon: SiTailwindcss,
+    color: '#06B6D4',
     group: 'core',
   },
   {
@@ -125,7 +166,8 @@ export const skills: Skill[] = [
     projects: ['All Projects'],
     description:
       'Deep understanding of ES6+, async/await, closures, prototypes, and functional programming. Expert in modern JavaScript patterns and best practices.',
-    icon: '📜',
+    icon: SiJavascript,
+    color: '#F7DF1E',
     group: 'core',
   },
   {
@@ -138,7 +180,8 @@ export const skills: Skill[] = [
     projects: ['All Projects'],
     description:
       'Semantic HTML, accessibility best practices, SEO optimization, and modern HTML5 APIs. Strong focus on web standards and cross-browser compatibility.',
-    icon: '🌐',
+    icon: FaHtml5,
+    color: '#E34F26',
     group: 'core',
   },
   {
@@ -151,7 +194,8 @@ export const skills: Skill[] = [
     projects: ['All Projects'],
     description:
       'Advanced CSS including Flexbox, Grid, animations, and responsive design. Expert in CSS architecture and methodology (BEM, CSS Modules).',
-    icon: '🎨',
+    icon: FaCss3Alt,
+    color: '#1572B6',
     group: 'core',
   },
 
@@ -166,7 +210,8 @@ export const skills: Skill[] = [
     projects: ['E-commerce Platform', 'Dashboard App'],
     description:
       'Implemented Redux Toolkit for state management in complex applications. Familiar with middleware, selectors, and Redux best practices.',
-    icon: '🔄',
+    icon: SiRedux,
+    color: '#764ABC',
     group: 'familiar',
   },
   {
@@ -179,7 +224,8 @@ export const skills: Skill[] = [
     projects: ['Admin Panel', 'Internal Tools'],
     description:
       'Built several projects with Vue 3 Composition API. Comfortable with Vue ecosystem including Vue Router and Pinia.',
-    icon: '💚',
+    icon: SiVuedotjs,
+    color: '#4FC08D',
     group: 'familiar',
   },
 
@@ -194,7 +240,8 @@ export const skills: Skill[] = [
     projects: ['REST API', 'Microservices', 'Real-time Chat'],
     description:
       'Built scalable backend services with Express and Fastify. Expert in async programming, streams, and Node.js performance optimization.',
-    icon: '🟢',
+    icon: FaNodeJs,
+    color: '#339933',
     group: 'core',
   },
   {
@@ -207,7 +254,8 @@ export const skills: Skill[] = [
     projects: ['REST API', 'Authentication Service', 'File Upload Service'],
     description:
       'Developed RESTful APIs with proper routing, middleware, error handling, and authentication. Implemented JWT-based auth and role-based access control.',
-    icon: '🚂',
+    icon: SiExpress,
+    color: 'currentColor',
     group: 'core',
   },
   {
@@ -220,7 +268,8 @@ export const skills: Skill[] = [
     projects: ['E-commerce API', 'User Management API', 'Payment Integration'],
     description:
       'Designed and implemented RESTful APIs following best practices. Expert in API versioning, documentation (OpenAPI/Swagger), and security.',
-    icon: '🔌',
+    icon: TbApi,
+    color: '#FF6C37',
     group: 'core',
   },
 
@@ -235,7 +284,8 @@ export const skills: Skill[] = [
     projects: ['Data Processing Scripts', 'Automation Tools', 'ML Model'],
     description:
       'Used Python for scripting, data processing, and backend services. Familiar with Flask, FastAPI, and data science libraries.',
-    icon: '🐍',
+    icon: FaPython,
+    color: '#3776AB',
     group: 'familiar',
   },
   {
@@ -248,7 +298,8 @@ export const skills: Skill[] = [
     projects: ['Blog Platform', 'Content Management System'],
     description:
       'Implemented GraphQL APIs with Apollo Server. Understanding of schemas, resolvers, and query optimization.',
-    icon: '◭',
+    icon: SiGraphql,
+    color: '#E10098',
     group: 'familiar',
   },
 
@@ -263,7 +314,8 @@ export const skills: Skill[] = [
     projects: ['E-commerce Platform', 'User Management System'],
     description:
       'Designed relational database schemas, wrote complex queries, and optimized performance. Familiar with indexing, transactions, and migrations.',
-    icon: '🐘',
+    icon: SiPostgresql,
+    color: '#336791',
     group: 'core',
   },
   {
@@ -276,7 +328,8 @@ export const skills: Skill[] = [
     projects: ['Blog Platform', 'Real-time Chat', 'Analytics Dashboard'],
     description:
       'Experienced with document-based data modeling, aggregation pipelines, and indexing strategies. Used Mongoose for schema validation.',
-    icon: '🍃',
+    icon: SiMongodb,
+    color: '#47A248',
     group: 'core',
   },
 
@@ -291,7 +344,8 @@ export const skills: Skill[] = [
     projects: ['Caching Layer', 'Session Management', 'Rate Limiting'],
     description:
       'Implemented Redis for caching, session storage, and pub/sub messaging. Improved application performance significantly.',
-    icon: '🔴',
+    icon: SiRedis,
+    color: '#DC382D',
     group: 'familiar',
   },
   {
@@ -304,7 +358,8 @@ export const skills: Skill[] = [
     projects: ['Legacy System Migration', 'Reporting Dashboard'],
     description:
       'Worked with MySQL databases, wrote optimized queries, and performed database migrations. Familiar with stored procedures and triggers.',
-    icon: '🐬',
+    icon: SiMysql,
+    color: '#4479A1',
     group: 'familiar',
   },
 
@@ -319,7 +374,8 @@ export const skills: Skill[] = [
     projects: ['All Projects'],
     description:
       'Expert in Git workflows (Git Flow, trunk-based), branching strategies, rebasing, and conflict resolution. Experienced with GitHub, GitLab, and Bitbucket.',
-    icon: '🔀',
+    icon: FaGitAlt,
+    color: '#F05032',
     group: 'core',
   },
   {
@@ -332,7 +388,8 @@ export const skills: Skill[] = [
     projects: ['Microservices', 'Development Environment', 'CI/CD Pipeline'],
     description:
       'Containerized applications with Docker, created multi-stage builds, and managed Docker Compose for local development.',
-    icon: '🐳',
+    icon: FaDocker,
+    color: '#2496ED',
     group: 'core',
   },
   {
@@ -345,7 +402,8 @@ export const skills: Skill[] = [
     projects: ['Automated Deployment', 'Testing Pipeline'],
     description:
       'Set up CI/CD pipelines with GitHub Actions and GitLab CI. Automated testing, building, and deployment processes.',
-    icon: '🔄',
+    icon: VscGithubAction,
+    color: '#2088FF',
     group: 'core',
   },
 
@@ -360,7 +418,8 @@ export const skills: Skill[] = [
     projects: ['Cloud Deployment', 'S3 Storage', 'Lambda Functions'],
     description:
       'Deployed applications on AWS using EC2, S3, Lambda, and RDS. Familiar with IAM, CloudWatch, and basic AWS architecture.',
-    icon: '☁️',
+    icon: SiAmazon,
+    color: '#FF9900',
     group: 'familiar',
   },
   {
@@ -373,7 +432,8 @@ export const skills: Skill[] = [
     projects: ['Portfolio Website', 'Next.js Applications'],
     description:
       'Deployed multiple Next.js applications on Vercel with custom domains, environment variables, and preview deployments.',
-    icon: '▲',
+    icon: SiVercel,
+    color: 'currentColor',
     group: 'core',
   },
 
@@ -388,7 +448,8 @@ export const skills: Skill[] = [
     projects: ['All Projects'],
     description:
       'Primary code editor with extensive customization. Expert in shortcuts, extensions, debugging, and productivity features.',
-    icon: '💻',
+    icon: VscCode,
+    color: '#007ACC',
     group: 'core',
   },
   {
@@ -401,7 +462,8 @@ export const skills: Skill[] = [
     projects: ['All Projects'],
     description:
       'Expert in package management, dependency resolution, and monorepo setups. Published packages to npm registry.',
-    icon: '📦',
+    icon: SiNpm,
+    color: '#CB3837',
     group: 'core',
   },
   {
@@ -414,7 +476,8 @@ export const skills: Skill[] = [
     projects: ['API Development', 'Testing'],
     description:
       'Used Postman for API testing, documentation, and automation. Created collections and environments for team collaboration.',
-    icon: '📮',
+    icon: SiPostman,
+    color: '#FF6C37',
     group: 'core',
   },
 
@@ -429,7 +492,8 @@ export const skills: Skill[] = [
     projects: ['UI Design', 'Prototyping'],
     description:
       'Created UI designs and prototypes in Figma. Collaborated with designers and implemented designs in code.',
-    icon: '🎨',
+    icon: SiFigma,
+    color: '#F24E1E',
     group: 'familiar',
   },
   {
@@ -442,7 +506,8 @@ export const skills: Skill[] = [
     projects: ['Unit Testing', 'Integration Testing'],
     description:
       'Wrote unit and integration tests with Jest. Familiar with mocking, snapshots, and test coverage reporting.',
-    icon: '🃏',
+    icon: SiJest,
+    color: '#C21325',
     group: 'familiar',
   },
 
@@ -457,7 +522,8 @@ export const skills: Skill[] = [
     projects: ['Learning Projects', 'CLI Tools'],
     description:
       'Currently learning Rust for systems programming and performance-critical applications. Exploring ownership, borrowing, and concurrency.',
-    icon: '🦀',
+    icon: SiRust,
+    color: 'currentColor',
     group: 'learning',
   },
   {
@@ -470,7 +536,8 @@ export const skills: Skill[] = [
     projects: ['Container Orchestration Study'],
     description:
       'Learning Kubernetes for container orchestration. Understanding pods, services, deployments, and basic cluster management.',
-    icon: '☸️',
+    icon: SiKubernetes,
+    color: '#326CE5',
     group: 'learning',
   },
   {
@@ -483,7 +550,8 @@ export const skills: Skill[] = [
     projects: ['3D Portfolio Experiment', 'WebGL Learning'],
     description:
       'Exploring 3D graphics on the web with Three.js. Learning about scenes, cameras, lighting, and animations.',
-    icon: '🎮',
+    icon: SiThreedotjs,
+    color: 'currentColor',
     group: 'learning',
   },
 ];

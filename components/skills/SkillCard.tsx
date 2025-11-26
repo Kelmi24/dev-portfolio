@@ -41,9 +41,13 @@ export default function SkillCard({ skill, isHighlighted = false }: SkillCardPro
       {/* Skill Header */}
       <div className="mb-3 flex items-start justify-between">
         <div className="flex items-center gap-2">
-          <span className="text-2xl" aria-hidden="true">
-            {skill.icon}
-          </span>
+          <div
+            className="flex h-10 w-10 items-center justify-center rounded-lg transition-transform duration-200 group-hover:scale-110"
+            style={{ color: skill.color }}
+            aria-hidden="true"
+          >
+            <skill.icon className="h-6 w-6" />
+          </div>
           <div>
             <h3 className="font-semibold text-neutral-900 dark:text-neutral-100">
               {skill.name}
