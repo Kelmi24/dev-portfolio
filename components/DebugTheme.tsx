@@ -28,7 +28,7 @@ export function DebugTheme() {
       <div>Theme: {theme || 'undefined'}</div>
       <div>System: {systemTheme || 'undefined'}</div>
       <div>Resolved: {resolvedTheme || 'undefined'}</div>
-      <div>HTML class: "{htmlClass}"</div>
+      <div>HTML class: &quot;{htmlClass}&quot;</div>
     </div>
   );
 }
