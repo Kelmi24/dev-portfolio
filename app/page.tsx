@@ -1,6 +1,7 @@
 'use client';
 
 import dynamic from 'next/dynamic';
+import Image from 'next/image';
 import AnimatedCounter from '@/components/AnimatedCounter';
 import { motion } from 'framer-motion';
 import { staggerContainer, slideUp, fadeIn } from '@/lib/animations';
@@ -25,6 +26,22 @@ export default function Home() {
           initial="hidden"
           animate="visible"
         >
+          {/* Profile Picture */}
+          <motion.div className="mb-8" variants={slideUp}>
+            <div className="relative w-40 h-40 md:w-48 md:h-48 mx-auto">
+              <Image
+                src="/images/profile.png"
+                alt="Kelmi - Full Stack Developer Professional Headshot"
+                width={192}
+                height={192}
+                priority
+                className="rounded-full object-cover border-4 border-white/20 dark:border-neutral-800/40 shadow-2xl ring-4 ring-primary-500/20 dark:ring-primary-400/20"
+              />
+              {/* Decorative gradient ring */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary-500/20 to-transparent -z-10 blur-xl"></div>
+            </div>
+          </motion.div>
+
           <motion.div className="mb-4" variants={slideUp}>
             <p className="text-sm font-semibold uppercase tracking-wider text-primary-600 dark:text-primary-400">
               Full Stack Developer
