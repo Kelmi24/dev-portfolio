@@ -32,8 +32,7 @@ export default function Home() {
               <Image
                 src="/images/profile.png"
                 alt="Kelmi - Full Stack Developer Professional Headshot"
-                width={192}
-                height={192}
+                fill
                 priority
                 className="rounded-full object-cover border-4 border-white/20 dark:border-neutral-800/40 shadow-2xl ring-4 ring-primary-500/20 dark:ring-primary-400/20"
               />
