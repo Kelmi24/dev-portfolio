@@ -155,21 +155,31 @@ The contact form uses [Resend](https://resend.com/) for email delivery:
 
 ### Vercel (Recommended)
 
+The easiest way to deploy your Next.js portfolio with full support for API routes and contact form:
+
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Kelmi24/portfolio-website)
 
-1. Push your code to GitHub
-2. Import project in Vercel
-3. Add environment variables
-4. Deploy!
+**Quick Deploy:**
 
-### Other Platforms
+1. Click the button above or go to [vercel.com](https://vercel.com)
+2. Import your GitHub repository: `Kelmi24/portfolio-website`
+3. Add environment variables:
+   - `RESEND_API_KEY` - Your Resend API key
+   - `CONTACT_EMAIL` - `gederickelme1@gmail.com`
+4. Click **Deploy**
+5. Done! Your site will be live at `https://your-project.vercel.app`
 
-This is a standard Next.js app and can be deployed to:
+**📖 Detailed Guide:** See [VERCEL_DEPLOYMENT.md](VERCEL_DEPLOYMENT.md) for complete instructions.
 
-- Netlify
-- AWS Amplify
-- Railway
-- Render
+### Alternative Platforms
+
+This Next.js app can also be deployed to:
+
+- **Netlify** - Supports Next.js with serverless functions
+- **Railway** - Full-stack hosting with databases
+- **Render** - Free tier available for web services
+
+> **Note:** For platforms other than Vercel, you may need to configure serverless functions for the contact form API route.
 
 ## 📝 License
 
