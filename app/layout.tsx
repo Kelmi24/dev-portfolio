@@ -7,6 +7,7 @@ import Footer from '@/components/layout/Footer';
 import { ThemeProvider } from '@/components/theme-provider';
 import { ThemeClassFixer } from '@/components/ThemeClassFixer';
 import { personStructuredData, websiteStructuredData } from '@/lib/structured-data';
+import { SmoothAnimatedBackground } from '@/components/SmoothAnimatedBackground';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -81,7 +82,7 @@ export default function RootLayout({
           enableSystem
         >
           {/* Smooth Animated Background */}
-          <div className="fixed inset-0 -z-10 smooth-gradient-animation" />
+          <SmoothAnimatedBackground />
           
           <Header />
           <main className="flex-1">{children}</main>
