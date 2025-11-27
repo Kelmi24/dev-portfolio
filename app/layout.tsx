@@ -80,8 +80,8 @@ export default function RootLayout({
           defaultTheme="system"
           enableSystem
         >
-          {/* Animated Background */}
-          <div className="fixed inset-0 -z-10 animate-gradient-bg" />
+          {/* Smooth Animated Background */}
+          <div className="fixed inset-0 -z-10 smooth-gradient-animation" />
           
           <Header />
           <main className="flex-1">{children}</main>
