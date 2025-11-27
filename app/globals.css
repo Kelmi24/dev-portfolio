@@ -134,26 +134,28 @@ body {
 /* Smooth opacity fade animations for each layer */
 @keyframes fade-1 {
   0%, 100% { opacity: 1; }
-  25%, 75% { opacity: 0; }
-  50% { opacity: 0.3; }
+  25% { opacity: 0.3; }
+  50%, 75% { opacity: 0; }
 }
 
 @keyframes fade-2 {
-  0%, 100% { opacity: 0; }
+  0% { opacity: 0; }
   25% { opacity: 1; }
-  50%, 75% { opacity: 0.3; }
+  50% { opacity: 0.3; }
+  75%, 100% { opacity: 0; }
 }
 
 @keyframes fade-3 {
   0%, 25% { opacity: 0; }
   50% { opacity: 1; }
-  75%, 100% { opacity: 0.3; }
+  75% { opacity: 0.3; }
+  100% { opacity: 0; }
 }
 
 @keyframes fade-4 {
-  0%, 50% { opacity: 0; }
+  0%, 25%, 50% { opacity: 0; }
   75% { opacity: 1; }
-  100% { opacity: 0.3; }
+  100% { opacity: 0; }
 }
 
 .animate-fade-1 {
