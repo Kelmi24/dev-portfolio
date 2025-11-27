@@ -1,24 +1,23 @@
 #!/bin/bash
-echo "🚀 Starting manual deployment fix (Attempt 3)..."
+echo "🚀 Deploying consolidated README..."
 
-# 1. Force copy the file from the source location
-echo "📸 Restoring profile image file..."
-cp "/Users/rickelme/.gemini/antigravity/brain/eae601f2-af8b-453b-8e45-67943ba830f7/uploaded_image_1764172460985.png" "public/images/profile-original.png"
+# Add changes
+echo "📦 Adding changes..."
+git add README.md
+git add -u  # Stage deletions
 
-# 2. Add the file to git
-echo "➕ Adding file to git..."
-git add public/images/profile-original.png
-
-# 3. Add all other changes
-echo "📦 Adding other changes..."
-git add .
-
-# 4. Commit changes
+# Commit changes
 echo "💾 Committing changes..."
-git commit -m "fix: restore profile-original.png (force copy) and deploy"
+git commit -m "docs: consolidate all markdown files into single clean README
 
-# 5. Push to remote
-echo "Ep Pushing to GitHub..."
+- Combine README, DEPLOYMENT_GUIDE, VERCEL_DEPLOYMENT, GITHUB_SETUP
+- Remove redundant documentation files
+- Create concise, comprehensive single README
+- Include quick start, deployment, and troubleshooting
+- Add live demo link and updated project structure"
+
+# Push to remote
+echo "⬆️ Pushing to GitHub..."
 git push origin main
 
-echo "✅ Done! The profile picture IS definitely fixed now."
+echo "✅ Done! Documentation consolidated."
