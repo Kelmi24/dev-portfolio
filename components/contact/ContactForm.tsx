@@ -21,7 +21,6 @@ export default function ContactForm() {
       email: '',
       subject: '',
       message: '',
-      budget: '',
       honeypot: '',
     },
   });
@@ -142,26 +141,6 @@ export default function ContactForm() {
         )}
       </div>
 
-      {/* Budget (Optional) */}
-      <div className="space-y-2">
-        <label
-          htmlFor="budget"
-          className="text-sm font-medium text-neutral-900 dark:text-neutral-100"
-        >
-          Budget (Optional)
-        </label>
-        <select
-          id="budget"
-          className="w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 text-neutral-900 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-200 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100 dark:focus:ring-primary-900"
-          {...register('budget')}
-        >
-          <option value="">Select a range</option>
-          <option value="Under $5k">Under $5k</option>
-          <option value="$5k - $10k">$5k - $10k</option>
-          <option value="$10k - $25k">$10k - $25k</option>
-          <option value="$25k+">$25k+</option>
-        </select>
-      </div>
 
       {/* Message */}
       <div className="space-y-2">
