@@ -78,12 +78,6 @@ export default function Home() {
             >
               Let&apos;s Connect
             </a>
-            <a
-              href="#skills"
-              className="inline-flex items-center px-8 py-3 bg-neutral-100 text-neutral-700 rounded-lg font-medium hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700 transition-colors"
-            >
-              Tech Stack
-            </a>
           </motion.div>
         </motion.div>
       </section>
